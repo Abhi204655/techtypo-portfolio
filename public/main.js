@@ -54,7 +54,14 @@ const getProjects = () => {
                     if (metadataIndices.length > 0) {
                         let metadata = lines.slice(metadataIndices[0] + 1, metadataIndices[1])
                         metadata.forEach(line => {
-                            obj[line.split(": ")[0]] = line.split(": ")[1]
+                            let key = line.split(": ")[0];
+                            if (key == "tags") {
+                                let tagData = line.split(": ")[1].split(" ");
+                                console.log(tagData);
+                                obj[key] = tagData;
+                            } else {
+                                obj[key] = line.split(": ")[1]
+                            }
                         })
                         return obj
                     }
