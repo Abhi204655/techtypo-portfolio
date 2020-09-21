@@ -1,12 +1,5 @@
 [
     {
-        "id": 1600670040,
-        "title": "CodeStock IDE",
-        "desc": "In this Project I have made A Code Editor where you can compile your code",
-        "image": "/images/avatar275.png",
-        "tags": []
-    },
-    {
         "id": 1600668060,
         "title": "RecipeHunt",
         "desc": "This project is made using Edamam's recipe search API and in this project you can search a number of dishes based on the ingredient you enter...",
