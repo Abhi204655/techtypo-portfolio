@@ -87,6 +87,8 @@ const getProjects = () => {
                     title: metadata.title ? metadata.title : "No title given",
                     desc: metadata.desc ? metadata.desc : "No description found",
                     image: metadata.image,
+                    githubLink: metadata.githubLink ? metadata.githubLink : null,
+                    liveLink: metadata.liveLink ? metadata.liveLink : null,
                     tags: metadata.tags ? metadata.tags : []
                 }
                 projectlist.push(project)

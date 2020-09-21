@@ -1,9 +1,24 @@
 [
     {
+        "id": 1600676520,
+        "title": "Blog Website",
+        "desc": "\" In this project i have made a website where you can write blogs and",
+        "image": "/images/screenshot-from-2020-08-14-16-05-47.png",
+        "githubLink": "https://github.com/Abhi204655/blog-website",
+        "liveLink": null,
+        "tags": [
+            "Django",
+            "HTML5",
+            "CSS3"
+        ]
+    },
+    {
         "id": 1600674540,
         "title": "CodeStock IDE",
         "desc": "In this Project I have made A Code Editor where you can compile your code",
         "image": "/images/avatar275.png",
+        "githubLink": null,
+        "liveLink": null,
         "tags": [
             "React",
             "JavaScipt",
