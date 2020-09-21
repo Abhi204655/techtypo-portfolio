@@ -20,5 +20,9 @@ collections:
         - {label: "Project Image", name: "image", widget: "image"}
         - {label: "Github Link", name: "githubLink", widget: "string", required: false}
         - {label: "Live Link", name: "liveLink", widget: "string", required: false}
-        - {label: "Tags", name: "tags", widget: "string"}
+        # - {label: "Tags", name: "tags", widget: "string"}
+        - label: "Tags"
+          name: "tags"
+          widget: "list"
+          field: {label: tag, name: tag, widget: string}
         - {label: "Description",name: "desc",widget: "markdown"}

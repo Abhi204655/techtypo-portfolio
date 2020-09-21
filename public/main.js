@@ -1,8 +1,11 @@
+const { exec } = require("child_process");
+let m2j = require('markdown-to-json');
 const path = require("path")
 const fs = require("fs")
 
 const dirPath = path.join(__dirname, "../projects")
 let projectlist = []
+
 
 const months = {
     "01": "January",
@@ -33,66 +36,27 @@ const formatDate = (date) => {
 }
 
 
-
 const getProjects = () => {
     fs.readdir(dirPath, (err, files) => {
         if (err) {
-            return console.log("Failed to list contents of directory: " + err)
+            return console.log("Failed to list contents of directory: " + err);
         }
-        let ilist = []
+        let ilist = [];
         files.forEach((file, i) => {
-            let obj = {}
-            let post
-            fs.readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
-                const getMetadataIndices = (acc, elem, i) => {
-                    if (/^---/.test(elem)) {
-                        acc.push(i)
-                    }
-                    return acc
+            exec(`m2j ${dirPath}/${file}`, (error, stdout, stderr) => {
+                if (error) {
+                    console.log(`error: ${error.message}`);
+                    return;
                 }
-                const parseMetadata = ({ lines, metadataIndices }) => {
-                    if (metadataIndices.length > 0) {
-                        let metadata = lines.slice(metadataIndices[0] + 1, metadataIndices[1])
-                        metadata.forEach(line => {
-                            let key = line.split(": ")[0];
-                            if (key == "tags") {
-                                let tagData = line.split(": ")[1].split(" ");
-                                // console.log(tagData);
-                                obj[key] = tagData;
-                            } else {
-                                obj[key] = line.split(": ")[1]
-                            }
-                        })
-                        return obj
-                    }
+                if (stderr) {
+                    console.log(`stderr: ${stderr}`);
+                    return;
                 }
-                const parseContent = ({ lines, metadataIndices }) => {
-                    if (metadataIndices.length > 0) {
-                        lines = lines.slice(metadataIndices[1] + 1, lines.length)
-                    }
-                    return lines.join("\n")
-                }
-                const lines = contents.split("\n")
-                const metadataIndices = lines.reduce(getMetadataIndices, [])
-                const metadata = parseMetadata({ lines, metadataIndices })
-                const content = parseContent({ lines, metadataIndices })
-                console.log(content);
-                const parsedDate = metadata.date ? formatDate(metadata.date) : new Date()
-                const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`
-                const date = new Date(datestring)
-                const timestamp = date.getTime() / 1000
-                project = {
-                    id: timestamp,
-                    title: metadata.title ? metadata.title : "No title given",
-                    // desc: metadata.desc ? metadata.desc : "No description found",
-                    desc: content ? content : "No description found",
-                    image: metadata.image,
-                    githubLink: metadata.githubLink ? metadata.githubLink : null,
-                    liveLink: metadata.liveLink ? metadata.liveLink : null,
-                    tags: metadata.tags ? metadata.tags : []
-                }
-                projectlist.push(project)
-                ilist.push(i)
+                stdout = JSON.parse(stdout);
+                const name = file.split('.')[0];
+                projectlist.push(stdout[`${name}`]);
+
+                ilist.push(i);
                 if (ilist.length === files.length) {
                     const sortedList = projectlist.sort((a, b) => {
                         return a.id < b.id ? 1 : -1
@@ -100,10 +64,10 @@ const getProjects = () => {
                     let data = JSON.stringify(sortedList)
                     fs.writeFileSync("src/projects.json", data)
                 }
-            })
+            });
         })
     })
-    return
 }
 
-getProjects()
+
+getProjects();

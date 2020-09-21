@@ -5,11 +5,7 @@
         "date": "2020-09-21T14:19:00.162Z",
         "image": "/images/screenshot-from-2020-08-14-16-05-47.png",
         "githubLink": "https://github.com/Abhi204655/WeatherApp",
-        "tags": [
-            "React",
-            "NodeJs",
-            "Django"
-        ],
+        "tags": "React NodeJs Django",
         "preview": "",
         "iso8601Date": "2020-09-21T19:49:00+05:30",
         "basename": "2020-09-21-weather-app"
@@ -19,11 +15,7 @@
         "desc": "In this Project I have made A Code Editor where you can compile your code in multiple languages like C,C++,C#,Python etc. You can also Download Youe code in specific file type.",
         "date": "2020-09-21T13:19:07.222Z",
         "image": "/images/avatar275.png",
-        "tags": [
-            "React",
-            "NodeJs",
-            "Django"
-        ],
+        "tags": "React JavaScipt Node",
         "preview": "",
         "iso8601Date": "2020-09-21T18:49:07+05:30",
         "basename": "2020-09-21-codestock-ide"
@@ -34,11 +26,7 @@
         "date": "2020-09-21T13:52:45.120Z",
         "image": "/images/screenshot-from-2020-08-14-16-05-47.png",
         "githubLink": "https://github.com/Abhi204655/blog-website",
-        "tags": [
-            "React",
-            "NodeJs",
-            "Django"
-        ],
+        "tags": "Django HTML5 CSS3",
         "preview": "",
         "iso8601Date": "2020-09-21T19:22:45+05:30",
         "basename": "2020-09-21-blog-website"
