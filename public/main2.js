@@ -68,26 +68,36 @@ const getProjects = () => {
                 const lines = contents.split("\n")
                 const metadataIndices = lines.reduce(getMetadataIndices, [])
                 const metadata = parseMetadata({ lines, metadataIndices })
+                const content = parseContent({ lines, metadataIndices })
                 const parsedDate = metadata.date ? formatDate(metadata.date) : new Date()
+                const publishedDate = `${parsedDate["monthName"]} ${parsedDate["day"]}, ${parsedDate["year"]}`
                 const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`
                 const date = new Date(datestring)
                 const timestamp = date.getTime() / 1000
-                console.log(metadata.tags);
-                project = {
+                post = {
+                    // id: timestamp,
+                    // title: metadata.title ? metadata.title : "No title given",
+                    // author: metadata.author ? metadata.author : "No author given",
+                    // date: publishedDate ? publishedDate : "No date given",
+                    // time: parsedDate["time"],
+                    // thumbnail: metadata.thumbnail,
+                    // content: content ? content : "No content given",
+
+
                     id: timestamp,
                     title: metadata.title ? metadata.title : "No title given",
-                    desc: metadata.desc ? metadata.desc : "No description found",
+                    desc: content ? content : "No description found",
                     image: metadata.image,
                     tags: metadata.tags ? metadata.tags : []
                 }
-                projectlist.push(project)
+                projectlist.push(post)
                 ilist.push(i)
                 if (ilist.length === files.length) {
                     const sortedList = projectlist.sort((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
                     let data = JSON.stringify(sortedList)
-                    fs.writeFileSync("src/projects.json", data)
+                    fs.writeFileSync("src/projects2.json", data)
                 }
             })
         })

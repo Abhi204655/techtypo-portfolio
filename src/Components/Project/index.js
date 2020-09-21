@@ -3,7 +3,7 @@ import ProjectCard from '../ProjectCard';
 import './project.scss';
 import Projects from '../../projects.json';
 
-function Projet() {
+function Project() {
     return (
         <div className="project">
             <div className="project-head">
@@ -24,4 +24,4 @@ function Projet() {
     )
 }
 
-export default Projet
+export default Project
