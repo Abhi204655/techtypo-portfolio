@@ -17,8 +17,8 @@ function ProjectCard({ project: { title, desc, tags, image, githubLink, liveLink
                     {tags && tags.map((tag, id) => <p key={id}>{tag}</p>)}
                 </div>
                 <div className="project-right-links">
-                    {liveLink && <a href="#!" target="_blank" rel="noopener noreferrer"><FaFirefoxBrowser size={30} /></a>}
-                    {githubLink && <a href="#!" target="_blank" rel="noopener noreferrer"><GrGithub size={30} /></a>}
+                    {liveLink && <a href={liveLink} target="_blank" rel="noopener noreferrer"><FaFirefoxBrowser size={30} /></a>}
+                    {githubLink && <a href={githubLink} target="_blank" rel="noopener noreferrer"><GrGithub size={30} /></a>}
 
                 </div>
             </div>
