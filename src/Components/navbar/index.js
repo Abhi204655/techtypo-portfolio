@@ -40,7 +40,7 @@ function Navbar() {
 
                     <li>
                         <a href="#project" onClick={() => setOpen(!open)}>
-                            <h3>Signup</h3>
+                            <h3>Projects</h3>
                             <p>Lorem ipsum dolor sit amet.</p>
                             <p>Lorem, ipsum dolor.</p>
                         </a>
