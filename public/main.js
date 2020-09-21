@@ -66,13 +66,15 @@ const getProjects = () => {
                     return lines.join("\n")
                 }
                 const lines = contents.split("\n")
+                // console.log(lines);
                 const metadataIndices = lines.reduce(getMetadataIndices, [])
+                // console.log(metadataIndices);
                 const metadata = parseMetadata({ lines, metadataIndices })
+                console.log(metadata);
                 const parsedDate = metadata.date ? formatDate(metadata.date) : new Date()
                 const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`
                 const date = new Date(datestring)
                 const timestamp = date.getTime() / 1000
-                console.log(metadata.tags);
                 project = {
                     id: timestamp,
                     title: metadata.title ? metadata.title : "No title given",
