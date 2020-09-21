@@ -57,7 +57,7 @@ const getProjects = () => {
                             let key = line.split(": ")[0];
                             if (key == "tags") {
                                 let tagData = line.split(": ")[1].split(" ");
-                                console.log(tagData);
+                                // console.log(tagData);
                                 obj[key] = tagData;
                             } else {
                                 obj[key] = line.split(": ")[1]
@@ -72,12 +72,12 @@ const getProjects = () => {
                     }
                     return lines.join("\n")
                 }
+                console.log(contents.split(":"));
                 const lines = contents.split("\n")
-                // console.log(lines);
                 const metadataIndices = lines.reduce(getMetadataIndices, [])
-                // console.log(metadataIndices);
                 const metadata = parseMetadata({ lines, metadataIndices })
-                console.log(metadata);
+                const content = parseContent({ lines, metadataIndices })
+                // console.log(content);
                 const parsedDate = metadata.date ? formatDate(metadata.date) : new Date()
                 const datestring = `${parsedDate["year"]}-${parsedDate["month"]}-${parsedDate["day"]}T${parsedDate["time"]}:00`
                 const date = new Date(datestring)
