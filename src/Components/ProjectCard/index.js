@@ -1,11 +1,11 @@
 import React from 'react'
 import './projectcard.scss';
 
-function ProjectCard({ project: { title, desc, tags }, order }) {
+function ProjectCard({ project: { title, desc, tags, image }, order }) {
     return (
         <div className={`project-wrapper ${order ? "order-2" : ""}`}>
             <div className="project-left">
-                <img src="images/avatar275.png" alt="project thumbnail" />
+                <img src={image} alt="project thumbnail" />
             </div>
             <div className="project-right">
                 <h1>{title}</h1>
