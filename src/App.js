@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import About from './Components/About';
+import Intro from './Components/Intro';
+import Project from './Components/Project';
+import Navbar from './Components/navbar';
+import Backdrop1 from './Assets/img1.png';
+import Backdrop2 from './Assets/img2.png';
+// import Backdrop from './Assets/backdrop.png';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="intro-section" id="home">
+        <div className="backdrop">
+          <img src={Backdrop1} alt="backdrop 1" />
+        </div>
+        <Navbar />
+        <Intro />
+      </div>
+      <div className="about-section" id="about">
+        <div className="backdrop">
+          <img src={Backdrop2} alt="backdrop 2" />
+        </div>
+        <About />
+      </div>
+      <div className="project-section" id="project">
+        {/* <div className="backdrop">
+          <img src={Backdrop} alt="backdrop" />
+        </div> */}
+        <Project />
+      </div>
     </div>
   );
 }

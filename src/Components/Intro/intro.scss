@@ -1,0 +1,97 @@
+.intro{
+    width: 80%;
+    height: calc(100vh - 5em);
+    // background: red;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 0;
+    animation: reveal 1s 2.2s forwards;
+    position: relative;
+
+    &-name{
+        font-size: clamp(1em,10vw,1.6em);
+        font-weight: 400;
+    }
+    & h3{
+        font-size: clamp(3em,10vw,6em);
+        line-height: 1.2;
+    }
+    & h4{
+        font-size: 1.7em;
+        line-height: 1.5;
+        font-weight: 400;
+    }
+    #cta{
+        margin: 0.8em 0;
+        color: white;
+        background: black;
+        text-decoration: none;
+        padding: 0.5em 1.4em;
+    }
+
+    & .scroller{
+        position: absolute;
+        bottom: 2em;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1.2em;
+        height: 2em;
+        border: 2px solid black;
+        border-radius: 10px;
+        display: grid;
+        place-content: center;
+
+        & p{
+            user-select: none;
+            font-size: 0.8em;
+            animation: move-y 1s linear infinite;
+        }
+    }
+}
+
+
+@keyframes reveal{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes move-y{
+    0%{
+        transform:translateY(20%);
+    }
+    25%{
+
+        transform:translateY(0%);
+    }
+    75%{
+
+        transform:translateY(-20%);
+    }
+    100%{
+        opacity: 1;
+        transform:translateY(0%);
+    }
+}
+
+.react-rotating-text-cursor {
+    animation: blinking-cursor 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
+}
+
+@keyframes blinking-cursor {
+0% {
+    opacity: 0;
+}
+50% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
