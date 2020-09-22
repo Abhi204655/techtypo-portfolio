@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import './App.scss';
 import About from './Components/About';
 import Intro from './Components/Intro';
@@ -9,6 +11,11 @@ import Backdrop2 from './Assets/img2.png';
 // import Backdrop from './Assets/backdrop.png';
 
 function App() {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <div className="App">
       <div className="intro-section" id="home">
