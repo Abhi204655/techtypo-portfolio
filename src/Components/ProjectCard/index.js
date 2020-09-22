@@ -6,7 +6,7 @@ import './projectcard.scss';
 
 function ProjectCard({ project: { title, desc, tags, image, githubLink, liveLink }, order }) {
     return (
-        <div className={`project-wrapper ${order ? "order-2" : ""}`} data-aos={order ? "fade-down-left" : "fade-down-right"}>
+        <div className={`project-wrapper ${order ? "order-2" : ""}`} data-aos="fade-up">
             <div className="project-left">
                 <img src={image} alt="project thumbnail" />
             </div>

@@ -25,19 +25,19 @@
                 transform: scale(1.03);
             }   
         }
-        &::after{
-            content: '';
-            position: absolute;
-            top: 0%;
-            left:10px;
-            max-width: 600px;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            z-index: -1;
-            background: black;
-            transition: all 0.3s ease-in;
-        }
+        // &::after{
+        //     content: '';
+        //     position: absolute;
+        //     top: 0%;
+        //     left:10px;
+        //     max-width: 600px;
+        //     width: 100%;
+        //     height: 100%;
+        //     border-radius: 50%;
+        //     z-index: -1;
+        //     background: black;
+        //     transition: all 0.3s ease-in;
+        // }
     }
     &-desc{
         flex:1;
@@ -81,6 +81,12 @@
                     justify-content: center;
                 }
             }
+        }
+    }
+
+    @media(max-width:1000px){
+        &{
+            flex-direction: column;
         }
     }
 }
