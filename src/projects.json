@@ -1,16 +1,1 @@
-[
-    {
-        "title": "demo",
-        "date": "2020-09-21T16:09:54.652Z",
-        "image": "/images/screenshot-from-2020-08-14-16-05-47.png",
-        "tags": [
-            "React",
-            "Node",
-            "JavaScript"
-        ],
-        "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-        "preview": "",
-        "iso8601Date": "2020-09-21T21:39:54+05:30",
-        "basename": "2020-09-21-demo"
-    }
-]
+[{"title":"CoronaTracker","date":"2020-09-21T17:40:50.236Z","image":"/images/screenshot-from-2020-08-14-16-05-47.png","githubLink":"https://github.com/Abhi204655/CoronaTracker","desc":"The main motive of this project is to show the count of confirmed, recovered and deaths in a particulat country...","preview":"","iso8601Date":"2020-09-21T23:10:50+05:30","basename":"2020-09-21-coronatracker"},{"title":"demo","date":"2020-09-21T16:09:54.652Z","image":"/images/screenshot-from-2020-08-14-16-05-47.png","tags":["React","Node","JavaScript"],"desc":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.","preview":"","iso8601Date":"2020-09-21T21:39:54+05:30","basename":"2020-09-21-demo"},{"title":"CodeStock IDE","date":"2020-09-21T16:15:26.583Z","image":"/images/screenshot-from-2020-08-13-20-22-44.png","githubLink":"https://github.com/Abhi204655/CodeStock-Web","tags":["React","NodeJs","Django","Netlify"],"desc":"In this Project I have made A Code Editor where you can compile your code in multiple languages like C,C++,C#,Python etc. You can also Download Youe code in specific file type.","preview":"","iso8601Date":"2020-09-21T21:45:26+05:30","basename":"2020-09-21-codestock-ide"}]
