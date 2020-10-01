@@ -1,3 +1,4 @@
+This is my personal portfolio app built on React and hosted on [TechTypo.me](https://techtypo.me/).
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
